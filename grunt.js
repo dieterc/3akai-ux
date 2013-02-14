@@ -2,7 +2,13 @@ module.exports = function(grunt) {
     grunt.initConfig({
         ghost: {
             dist: {
-                src: ['tests/suites/*.js']
+                src: ['tests/suites/*.js'],
+                options: {
+                    includes: [
+                        'tests/utils/utils.js',
+                    ],
+                    failFast: false
+                }
             }
         }
     });
@@ -10,4 +16,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-ghost');
 
     grunt.registerTask('default', 'ghost');
+    grunt.registerTask('test', 'ghost');
 };

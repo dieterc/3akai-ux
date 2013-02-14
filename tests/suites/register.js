@@ -3,12 +3,6 @@ casper.test.comment('Sakai OAE - Register new user');
 
 var testTime = new Date().getTime();
 
-var takeScreenshot = function() {
-    casper.waitForSelector('html', function() {
-        this.captureSelector('screenshots/' + testTime + '/' + new Date().getTime() + '.png', 'html');
-    });
-};
-
 /**
  * Initialize CasperJS and point it to cam.oae.com
  */
@@ -25,35 +19,33 @@ casper.waitForSelector('a[href="/register"]', function() {
 
     this.test.assertExists('#topnavigation_left a[href="/register"]');
     this.click('#topnavigation_left a[href="/register"]');
-    takeScreenshot();
-});
+    takeScreenshot(true, function() {
 
-/**
- * Fill out and submit the register form
- */
-casper.waitForSelector('form#register_form', function() {
-    casper.test.info("     # Fill out and submit the register form");
+        /**
+         * Fill out and submit the register form
+         */
+        casper.waitForSelector('form#register_form', function() {
+            casper.test.info("     # Fill out and submit the register form");
 
-    this.test.assertTitle('Sakai OAE - Sign up');
-    this.fill('form#register_form', {
-        'firstName': 'John',
-        'lastName': 'Doe',
-        'email': 'jd@gmail.com',
-        'username': 'johndoe-' + new Date().getTime(),
-        'password': 'testtest',
-        'password_repeat': 'testtest'
-    }, false);
+            this.test.assertTitle('Sakai OAE - Sign up');
+            this.fill('form#register_form', {
+                'firstName': 'John',
+                'lastName': 'Doe',
+                'email': 'jd@gmail.com',
+                'username': 'johndoe-' + new Date().getTime(),
+                'password': 'testtest',
+                'password_repeat': 'testtest'
+            }, false);
 
-    takeScreenshot();
-
-    this.wait(1000, function() {
-        this.click('#register_create_account');
-        takeScreenshot();
+            takeScreenshot(false, function() {
+                casper.click('#register_create_account');
+                takeScreenshot(true, function() {
+                    casper.test.done();
+                });
+            });
+        });
     });
 });
 
 // Run the whole test suite (all the above)
-casper.run(function () {
-    // Confirm this test is done
-    this.test.done();
-});
+casper.run();
