@@ -1,39 +1,35 @@
 {
   "name": "3akai-ux",
-  "description": "Sakai OAE Front-end",
-  "version": "1.5.0",
+  "description": "The best project ever.",
+  "version": "1.4.0",
   "homepage": "https://github.com/sakaiproject/3akai-ux",
   "author": {
-     "name": "The Sakai Foundation",
-     "email": "oae-dev@collab.sakaiproject.org"
+    "name": "Bert Pareyn",
+    "email": "pareyn.bert@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/sakaiproject/3akai-ux.git"
+    "url": "https://github.com/sakaiproject/3akai-ux.git"
   },
   "bugs": {
     "url": "https://github.com/sakaiproject/3akai-ux/issues"
   },
   "licenses": [
-     {
-       "type": "ECLv2",
-       "url": "http://opensource.org/licenses/ecl2.php"
-     }
+    {
+      "type": "MIT",
+      "url": "https://github.com/sakaiproject/3akai-ux/blob/master/LICENSE-MIT"
+    }
   ],
-  "dependencies": {
-    "oae-core": ""
+  "main": "lib/3akai-ux",
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
   },
   "devDependencies": {
-    "grunt": "latest",
-    "grunt-clean": "latest",
-    "grunt-requirejs": "latest",
-    "grunt-hashres": "latest",
-    "shelljs": "latest"
+    "grunt": "~0.3.17",
+    "grunt-ghost": "latest"
   },
-  "bundleDependencies": [
-    "oae-core"
-  ],
-  "engines": {
-    "node": ">=0.8"
-  }
+  "keywords": []
 }

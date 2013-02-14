@@ -1,11 +1,57 @@
-# Sakai OAE
+# 3akai-ux
 
-3akai-ux is the front-end for Sakai OAE
+The best project ever.
 
-### Installing Sakai OAE
+## Getting Started
+### On the server
+Install the module with: `npm install 3akai-ux`
 
-Documentation on how to install and configure Sakai OAE can be found [here](https://github.com/sakaiproject/Hilary).
+```javascript
+var _3akai_ux = require('3akai-ux');
+_3akai_ux.awesome(); // "awesome"
+```
 
-### Widget development
+### In the browser
+Download the [production version][min] or the [development version][max].
 
-Documentation on how to create custom Sakai OAE widgets and an overview of the available widgets can be found at the [Widget Library](http://oae-widgets.sakaiproject.org/)
+[min]: https://raw.github.com/sakaiproject/3akai-ux/master/dist/3akai-ux.min.js
+[max]: https://raw.github.com/sakaiproject/3akai-ux/master/dist/3akai-ux.js
+
+In your web page:
+
+```html
+<script src="dist/3akai-ux.min.js"></script>
+<script>
+awesome(); // "awesome"
+</script>
+```
+
+In your code, you can attach 3akai-ux's methods to any object.
+
+```html
+<script>
+this.exports = Bocoup.utils;
+</script>
+<script src="dist/3akai-ux.min.js"></script>
+<script>
+Bocoup.utils.awesome(); // "awesome"
+</script>
+```
+
+## Documentation
+_(Coming soon)_
+
+## Examples
+_(Coming soon)_
+
+## Contributing
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](http://gruntjs.com/).
+
+_Also, please don't edit files in the "dist" subdirectory as they are generated via grunt. You'll find source code in the "lib" subdirectory!_
+
+## Release History
+_(Nothing yet)_
+
+## License
+Copyright (c) 2013 Bert Pareyn  
+Licensed under the MIT license.
