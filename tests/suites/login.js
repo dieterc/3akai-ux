@@ -1,8 +1,8 @@
 // Add a title comment so that you know what's happening and when
 casper.test.comment('Sakai OAE - Log in with a user\n');
 
-var username = "DieterC1";
-var password = "w9x2k7dieter";
+var username = "dieter";
+var password = "dieter";
 var link = "http://cam.oae.com";
 
 /**
